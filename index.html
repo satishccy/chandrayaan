@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Chandrayan</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="font-awesome_6.4.2_css_all.min.css" />
+    <script src="kit.fontawesome.com_a4e89c7158.js"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+
+    <header>
+      <nav>
+        <div class="menu">
+          <div class="image">
+            <h1>MissionMoon</h1>
+          </div>
+          <div class="menu-items">
+            <a href="#c1">Chandrayan 1</a>
+            <a href="#c2">Chandrayan 2</a>
+            <a href="#c3">Chandrayan 3</a>
+          </div>
+          <div class="hamburger-menu">
+            <button id="fa" style="background-color: transparent; border: none">
+              <i class="fa-solid fa-bars fa-xl" style="color: #000"></i>
+            </button>
+            <button
+              id="fa-cross"
+              style="background-color: transparent; border: none; display: none"
+            >
+              <i class="fa-solid fa-xmark fa-xl" style="color: #000"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--offcanvas-->
+
+    <div id="overlay"></div>
+    <div class="off-canvas" id="offcanvas">
+      <h2>MissionMoon</h2>
+      <hr
+        style="
+          opacity: 1;
+          display: block;
+          unicode-bidi: isolate;
+          margin-block-start: 0.5em;
+          margin-block-end: 0.5em;
+          margin-inline-start: auto;
+          margin-inline-end: auto;
+          overflow: hidden;
+          border-style: inset;
+          border-width: 1px;
+        "
+      />
+      <ul style="list-style: none; padding: 0">
+        <a onclick="closeCanvas();" href="#c1">Chandrayan 1</a>
+        <a onclick="closeCanvas();" href="#c2">Chandrayan 2</a>
+        <a onclick="closeCanvas();" href="#c3">Chandrayan 3</a>
+      </ul>
+    </div>
+
+    <!--Body-->
+
+    <div class="main">
+      <div class="c1" id="c1">
+        <div class="c1-image">
+          <img src="c1.jpg" alt="" />
+        </div>
+        <div class="c1-content">
+          <h3>Chandrayan 1 :-</h3>
+          <ul>
+            <li>Mission - Remote Sensing, Planetary Science</li>
+            <li>Weight - 1380 kg</li>
+            <li>Launch date - October 22, 2008</li>
+            <li>Lauch Vehicle - PSLV - C11</li>
+            <li>Orbit - Lunar Orbit</li>
+            <li>Mission Life - 2 Years</li>
+          </ul>
+        </div>
+      </div>
+      <div class="c2" id="c2">
+        <div class="c2-image">
+          <img src="c2.jpg" alt="" />
+        </div>
+        <div class="c2-content">
+          <h3>Chandrayan 2 :-</h3>
+          <ul>
+            <li>Mission - Orbiter, Lander and Rover</li>
+            <li>Weight - 3,850 kg</li>
+            <li>Launch date - August 14, 2019</li>
+            <li>Lauch Vehicle - GSLV-Mk III - M1</li>
+            <li>Orbit - Lunar Orbit</li>
+            <li>Mission Life - 7 Years</li>
+          </ul>
+        </div>
+      </div>
+      <div class="c3" id="c3">
+        <div class="c3-image">
+          <img src="c3.jpg" alt="" />
+        </div>
+        <div class="c3-content">
+          <h3>Chandrayan 3 :-</h3>
+          <ul>
+            <li>Mission - Soft Landing on Lunar Surface</li>
+            <li>Weight - 3900 kg</li>
+            <li>Launch date - July 14, 2023</li>
+            <li>Lauch Vehicle - LVM3 M4 vehicle</li>
+            <li>Orbit - Lunar Orbit</li>
+            <li>Mission Life - 14 Days</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      const overlay = document.querySelector("#overlay");
+      const mainNav = document.querySelector("#offcanvas");
+      const navToggle = document.querySelector("#fa");
+      const navClose = document.querySelector("#fa-cross");
+      function closeCanvas() {
+        navClose.style.display = "none";
+        navToggle.style.display = "block";
+        if (mainNav.classList.contains("is-active")) {
+          mainNav.classList.remove("is-active");
+        }
+        if (overlay.classList.contains("is-active"))
+          overlay.classList.remove("is-active");
+      }
+
+      navToggle.addEventListener("click", () => {
+        navClose.style.display = "block";
+        navToggle.style.display = "none";
+        if (!mainNav.classList.contains("is-active")) {
+          mainNav.classList.add("is-active");
+        }
+        if (!overlay.classList.contains("is-active"))
+          overlay.classList.add("is-active");
+      });
+      navClose.addEventListener("click", () => {
+        navClose.style.display = "none";
+        navToggle.style.display = "block";
+        if (mainNav.classList.contains("is-active")) {
+          mainNav.classList.remove("is-active");
+        }
+        if (overlay.classList.contains("is-active"))
+          overlay.classList.remove("is-active");
+      });
+      overlay.addEventListener("click", () => {
+        navClose.style.display = "none";
+        navToggle.style.display = "block";
+        if (mainNav.classList.contains("is-active")) {
+          mainNav.classList.remove("is-active");
+        }
+        if (overlay.classList.contains("is-active"))
+          overlay.classList.remove("is-active");
+      });
+    </script>
+  </body>
+</html>
